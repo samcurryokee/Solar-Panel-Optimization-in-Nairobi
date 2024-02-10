@@ -80,11 +80,11 @@ Below is a description of the columns in the dataset:
     - This information allows for the analysis of rooftop solar potential, installable capacity, and estimated yearly power potential for each building in the study area.
 
 # Modelling and Evaluation
+### Energy Potential Per Year. 
 This represents the estimated amount of solar energy that can be generated annually by the installation of solar panels on the given surface area.      
 In this phase we explore two prominent ensemble learning algorithms known for their robustness to multicollinearity ; `Random Forest` and `eXtreme Gradient Boosting`.     
 Additionally, we experiment with a` Neural Network` approach to further analyze and predict solar energy generation potential.    
 
-### Energy Potential Per Year. 
 After thorough evaluation, we determined the `Neural Network` as our final model. While the tuned XGBoost model demonstrates commendable performance, the Neural Network model excels in accuracy across both training and testing datasets. This underscores the Neural Network's superior predictive prowess, hence our selection. 
 
 Below is the final model's learning curve: 
