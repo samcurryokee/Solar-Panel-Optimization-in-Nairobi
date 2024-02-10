@@ -1,4 +1,4 @@
-# SOLAR OPTIMISATION IN NAIROBI
+# SOLAR OPTIMIZATION IN NAIROBI
 ![alt text](images/nuno-marques-0GbrjL3vZF4-unsplash.jpg)
 
 
@@ -35,11 +35,11 @@ Navigate to the repository directory and create an Anaconda environment using th
 cd Solar-Panel-Optimization-in-Nairobi
 conda env create -f file_name.yml
 ```
-Activate the Anaconda environment
+Activate the Anaconda environment:
 ```sh
 conda activate file_name
 ```
-To run the streamlit app locally, run the following
+To run the streamlit app locally, run the following:
 
 ```sh
 streamlit run deployment/app.py
@@ -97,8 +97,8 @@ The proximity and stability of both curves suggest minimal overfitting or underf
 Here,  we try and predict the potential installable  area based on critical factors such as "Surface Area", "Estimated tilt", and "Estimated building height" .     
 We explore the `Random Forest` algorithm and run a `Grid Search` on the same to optimize the model parameters. 
 
-# Deployment
-`Joblib`: Used to deploy the machine learning algorithm.         
+# Deployment and UI
+`Joblib`: Used to deploy the machine learning algorithms.         
 `Streamlit`: Used to create the interactive data app.
 
 # Next Steps
