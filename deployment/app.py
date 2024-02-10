@@ -31,7 +31,7 @@ model = load_model('keras_model.h5')
 
 
 def solar_energy_prediction():
-    st.markdown("<h1 style='color: black;'>Solar Optix</h1>",
+    st.markdown("<h1 style='color: black;'>SunOptimize Technologies</h1>",
                 unsafe_allow_html=True)
 
     # Sidebar for user input
@@ -115,7 +115,7 @@ def potential_installable_area():
     rf_model = load('randomForest.joblib')
 
     # Streamlit app
-    st.markdown("<h1 style='color: black;'>Solar Optix</h1>",
+    st.markdown("<h1 style='color: black;'>SunOptimize Technologies</h1>",
                 unsafe_allow_html=True)
 
     # Sidebar for user input
