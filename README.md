@@ -98,10 +98,13 @@ Here,  we try and predict the potential installable  area based on critical fact
 We explore the `Random Forest` algorithm and run a `Grid Search` on the same to optimize the model parameters. 
 
 # Deployment
-`Joblib`: Used to deploy the machine learning algorithm.
-``Streamlit`: Used to create the interactive data app.
+`Joblib`: Used to deploy the machine learning algorithm.         
+`Streamlit`: Used to create the interactive data app.
 
 # Next Steps
+
+
+
 
 # Acknowledgement
 * [Sammy Kimani](https://github.com/samcurryokee)        
