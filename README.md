@@ -1,8 +1,8 @@
 # SOLAR OPTIMIZATION IN NAIROBI
 ![alt text](images/nuno-marques-0GbrjL3vZF4-unsplash.jpg)
 
-<div style="display: inline-block;">
-    <a href="https://numpy.org/"><img src="images/image-4.png" alt="Numpy" width="100" style="height: 50px;"/></a> 
+<!-- <div style="display: inline-block;">
+<a href="https://numpy.org/"><img src="images/image-4.png" alt="Numpy" width="100" style="height: 50px;"/></a> 
 </div>
 <div style="display: inline-block;">
     <a href="https://pandas.pydata.org/"><img src="images/image-1.png" alt="pandas" width="100" style="height: 50px;"/></a> 
@@ -12,7 +12,9 @@
 </div>
 <div style="display: inline-block;">
     <a href="https://streamlit.io/"><img src="images/image-3.png" alt="streamlit" width="100" style="height: 50px;"/></a>
-</div>
+</div> -->
+<div style="display: inline-block;"><a href="https://numpy.org/"><img src="images/image-4.png" alt="Numpy" width="100" style="height: 50px;"/></a></div>  <div style="display: inline-block;"><a href="https://pandas.pydata.org/"><img src="images/image-1.png" alt="pandas" width="100" style="height: 50px;"/></a></div>  <div style="display: inline-block;"><a href="https://scikit-learn.org/stable/"><img src="images/image-2.png" alt="scikit-learn" width="100" style="height: 50px;"/></a></div>  <div style="display: inline-block;"><a href="https://streamlit.io/"><img src="images/image-3.png" alt="streamlit" width="100" style="height: 50px;"/></a></div>
+
 
 # Problem Statement
 There is a lack of a systematic approach for harnessing the solar potential of individual buildings in Nairobi. This is exacerbated by multiple unprojected power outages from KPLC, leading to increased interest in alternative energy sources. The primary issues include an absence of precise insights into suitable areas for solar installations and the lack of leveraging a vector dataset containing building footprints in Nairobi.
