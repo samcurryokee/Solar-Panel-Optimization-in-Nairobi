@@ -13,7 +13,7 @@ def get_base64_of_bin_file(bin_file):
     return base64.b64encode(data).decode()
 
 
-image_path = 'solar.jpg'
+image_path = 'solar energy.jpg'
 image_bytes = get_base64_of_bin_file(image_path)
 
 bg_image = f'''
@@ -31,21 +31,21 @@ model = load_model('keras_model.h5')
 
 
 def solar_energy_prediction():
-    st.markdown("<h1 style='color: black;'>SunOptimize Technologies</h1>",
+    st.markdown("<h1 style='color: black;'>SUNOPTIMIZE TECHNOLOGIES</h1>",
                 unsafe_allow_html=True)
 
     # Sidebar for user input
     st.sidebar.header('Input Parameters')
 
     # Input fields for each feature
-    surface_area = st.sidebar.number_input('Surface Area', value=500)
+    surface_area = st.sidebar.number_input('Surface Area', value=50)
     potential_installable_area = st.sidebar.number_input(
-        'Potential Installable Area', value=500)
+        'Potential Installable Area', value=50)
     peak_installable_capacity = st.sidebar.number_input(
-        'Peak Installable Capacity', value=500)
+        'Peak Installable Capacity', value=50)
     estimated_tilt = st.sidebar.number_input('Estimated Tilt Angle', value=45)
     estimated_building_height = st.sidebar.number_input(
-        'Estimated Building Height', value=50)
+        'Estimated Building Height', value=5)
     estimated_capacity_factor = st.sidebar.number_input(
         'Estimated Capacity Factor', value=0.85, step=0.01)
 
@@ -86,27 +86,27 @@ def solar_energy_prediction():
     prediction = model.predict(input_data)
 
     # Display prediction with larger font, black color, and bold style
-    st.markdown("<h2 style='font-size:  2em; color: black; font-weight: bold;'>Solar Energy Potential Prediction:</h2>",
+    st.markdown("<h2 style='font-size:  2.5em; color: white; font-weight: bold;'>Solar Energy Potential Prediction:</h2>",
                 unsafe_allow_html=True)
-    st.markdown("<p style='font-size:  1.5em; color: black; font-weight: bold;'>The predicted energy potential per year in KWh is: {}</p>".format(
+    st.markdown("<p style='font-size:  2em; color: white; font-weight: bold;'>The predicted energy potential per year in KWh is: {}</p>".format(
         prediction[0]), unsafe_allow_html=True)
 
     # Recommendations with larger font, black color, and bold style
     if prediction[0] < inputted_value:
         st.markdown(
-            "<h2 style='font-size:  2em; color: black; font-weight: bold;'>Recommendation:</h2>", unsafe_allow_html=True)
+            "<h2 style='font-size:  2.5em; color: white; font-weight: bold;'>Recommendation:</h2>", unsafe_allow_html=True)
         st.markdown(
-            "<p style='font-size:  1.5em; color: black; font-weight: bold;'>No adoption is recommended.</p>", unsafe_allow_html=True)
+            "<p style='font-size:  2em; color: white; font-weight: bold;'>No adoption is recommended.</p>", unsafe_allow_html=True)
     elif prediction[0] <= inputted_value * 1.2:
         st.markdown(
-            "<h2 style='font-size:  2em; color: black; font-weight: bold;'>Recommendation:</h2>", unsafe_allow_html=True)
+            "<h2 style='font-size:  2.5em; color: white; font-weight: bold;'>Recommendation:</h2>", unsafe_allow_html=True)
         st.markdown(
-            "<p style='font-size:  1.5em; color: black; font-weight: bold;'>Hybrid adoption is acceptable.</p>", unsafe_allow_html=True)
+            "<p style='font-size:  2em; color: white; font-weight: bold;'>Hybrid adoption is acceptable.</p>", unsafe_allow_html=True)
     else:
         st.markdown(
-            "<h2 style='font-size:  2em; color: black; font-weight: bold;'>Recommendation:</h2>", unsafe_allow_html=True)
+            "<h2 style='font-size:  2.5em; color: white; font-weight: bold;'>Recommendation:</h2>", unsafe_allow_html=True)
         st.markdown(
-            "<p style='font-size:  1.5em; color: black; font-weight: bold;'>Full adoption of solar is recommended.</p>", unsafe_allow_html=True)
+            "<p style='font-size:  2em; color: white; font-weight: bold;'>Full adoption of solar is recommended.</p>", unsafe_allow_html=True)
 # Function for Potential Installable Area
 
 
@@ -115,7 +115,7 @@ def potential_installable_area():
     rf_model = load('randomForest.joblib')
 
     # Streamlit app
-    st.markdown("<h1 style='color: black;'>SunOptimize Technologies</h1>",
+    st.markdown("<h1 style='color: black;'>SUNOPTIMIZE TECHNOLOGIES</h1>",
                 unsafe_allow_html=True)
 
     # Sidebar for user input
@@ -140,7 +140,7 @@ def potential_installable_area():
         prediction = rf_model.predict(input_data)
 
         # Display prediction
-        st.markdown("<p style='font-size:  1.5em; color: black; font-weight: bold;'>The predicted potential installable area is :{}</p>".format(
+        st.markdown("<p style='font-size:  2em; color: white; font-weight: bold;'>The predicted potential installable area is :{}</p>".format(
         prediction[0]), unsafe_allow_html=True)
 
 # Main function to run the app
