@@ -1,19 +1,6 @@
 # SOLAR OPTIMIZATION IN NAIROBI
 ![alt text](images/nuno-marques-0GbrjL3vZF4-unsplash.jpg)
 
-<!-- <div style="display: inline-block;">
-<a href="https://numpy.org/"><img src="images/image-4.png" alt="Numpy" width="100" style="height: 50px;"/></a> 
-</div>
-<div style="display: inline-block;">
-    <a href="https://pandas.pydata.org/"><img src="images/image-1.png" alt="pandas" width="100" style="height: 50px;"/></a> 
-</div>
-<div style="display: inline-block;">
-    <a href="https://scikit-learn.org/stable/"><img src="images/image-2.png" alt="scikit-learn" width="100" style="height: 50px;"/></a> 
-</div>
-<div style="display: inline-block;">
-    <a href="https://streamlit.io/"><img src="images/image-3.png" alt="streamlit" width="100" style="height: 50px;"/></a>
-</div> -->
-<!-- <div style="display: inline-block;"><a href="https://numpy.org/"><img src="images/image-4.png" alt="Numpy" width="100" style="height: 50px;"/></a></div>  <div style="display: inline-block;"><a href="https://pandas.pydata.org/"><img src="images/image-1.png" alt="pandas" width="100" style="height: 50px;"/></a></div>  <div style="display: inline-block;"><a href="https://scikit-learn.org/stable/"><img src="images/image-2.png" alt="scikit-learn" width="100" style="height: 50px;"/></a></div>  <div style="display: inline-block;"><a href="https://streamlit.io/"><img src="images/image-3.png" alt="streamlit" width="100" style="height: 50px;"/></a></div> -->
 
 | [![Numpy](images/image-4.png)](https://numpy.org/) | [![pandas](images/image-1.png)](https://pandas.pydata.org/) | [![scikit-learn](images/image-2.png)](https://scikit-learn.org/stable/) | [![streamlit](images/image-3.png)](https://streamlit.io/) |
 |---|---|---|---|
