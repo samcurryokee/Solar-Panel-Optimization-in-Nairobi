@@ -1,6 +1,18 @@
 # SOLAR OPTIMIZATION IN NAIROBI
 ![alt text](images/nuno-marques-0GbrjL3vZF4-unsplash.jpg)
 
+<div style="display: inline-block;">
+    <a href="https://numpy.org/"><img src="images/image-4.png" alt="Numpy" width="100" style="height: 50px;"/></a> 
+</div>
+<div style="display: inline-block;">
+    <a href="https://pandas.pydata.org/"><img src="images/image-1.png" alt="pandas" width="100" style="height: 50px;"/></a> 
+</div>
+<div style="display: inline-block;">
+    <a href="https://scikit-learn.org/stable/"><img src="images/image-2.png" alt="scikit-learn" width="100" style="height: 50px;"/></a> 
+</div>
+<div style="display: inline-block;">
+    <a href="https://streamlit.io/"><img src="images/image-3.png" alt="streamlit" width="100" style="height: 50px;"/></a>
+</div>
 
 # Problem Statement
 There is a lack of a systematic approach for harnessing the solar potential of individual buildings in Nairobi. This is exacerbated by multiple unprojected power outages from KPLC, leading to increased interest in alternative energy sources. The primary issues include an absence of precise insights into suitable areas for solar installations and the lack of leveraging a vector dataset containing building footprints in Nairobi.
@@ -21,29 +33,9 @@ There is a lack of a systematic approach for harnessing the solar potential of i
    - Develop a user-friendly interface for stakeholders to interact with the system.
    - Enable users to input building characteristics and receive real-time recommendations for optimal rooftop solar installations.
 
-# Installation Instructions
 
-To get started, clone this repository using the following command:
 
-```sh
-git clone https://github.com/samcurryokee/Solar-Panel-Optimization-in-Nairobi.git
-```
 
-Navigate to the repository directory and create an Anaconda environment using the provided `file_name.yml` file:
-
-```sh
-cd Solar-Panel-Optimization-in-Nairobi
-conda env create -f file_name.yml
-```
-Activate the Anaconda environment:
-```sh
-conda activate file_name
-```
-To run the streamlit app locally, run the following:
-
-```sh
-streamlit run deployment/app.py
-```
 # Data
 The data used in this project is from [ NEO](https://energydata.info/dataset/nairobi-rooftop-solar-potential-mapping).
 The dataset contains information about building structures and their suitability for solar panel installation. 
@@ -89,7 +81,7 @@ After thorough evaluation, we determined the `Neural Network` as our final model
 
 Below is the final model's learning curve: 
 
-![Learning curve](images/image.png)
+![Learning curve](images/loss.png)
 
 The proximity and stability of both curves suggest minimal overfitting or underfitting, indicating a robust model.
 
@@ -99,10 +91,15 @@ We explore the `Random Forest` algorithm and run a `Grid Search` on the same to 
 
 # Deployment and UI
 `Joblib`: Used to deploy the machine learning algorithms.         
-`Streamlit`: Used to create the interactive data app.
+`Streamlit`: Used to create the interactive data app.         
 
+
+To run the streamlit app locally, run the following:
+
+```sh
+streamlit run deployment/app.py
+```
 # Next Steps
-
 
 
 
