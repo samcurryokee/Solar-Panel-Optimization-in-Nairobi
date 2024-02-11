@@ -1,7 +1,6 @@
 # SOLAR OPTIMIZATION IN NAIROBI
 ![alt text](images/nuno-marques-0GbrjL3vZF4-unsplash.jpg)
 
-## Technologies
 <!-- <div style="display: inline-block;">
 <a href="https://numpy.org/"><img src="images/image-4.png" alt="Numpy" width="100" style="height: 50px;"/></a> 
 </div>
