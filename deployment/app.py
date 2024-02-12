@@ -43,7 +43,14 @@ def solar_energy_prediction():
         'Potential Installable Area', value=50)
     peak_installable_capacity = st.sidebar.number_input(
         'Peak Installable Capacity', value=50)
-    estimated_tilt = st.sidebar.number_input('Estimated Tilt Angle', value=45)
+    estimated_tilt_category = st.sidebar.selectbox(
+        'Tilt Angle', options=['High', 'Moderate', 'Low',"flat"])
+    estimated_tilt = {
+        'High':  110,
+        'Moderate':  60,
+        'Low':  15,
+        "flat": 180
+        }[estimated_tilt_category]
     estimated_building_height = st.sidebar.number_input(
         'Estimated Building Height', value=5)
     estimated_capacity_factor = st.sidebar.number_input(
@@ -123,12 +130,12 @@ def potential_installable_area():
         # Define input fields for each feature
         surface_area = st.sidebar.number_input('Surface Area', value=0)
         estimated_tilt_category = st.sidebar.selectbox(
-        'Tilt Angle Category', options=['High', 'Moderate', 'Low',"flat"])
+        'Tilt Angle', options=['High', 'Moderate', 'Low',"flat"])
         estimated_tilt = {
-        'High':  45,
-        'Moderate':  30,
+        'High':  110,
+        'Moderate':  60,
         'Low':  15,
-        "flat": 1
+        "flat": 180
         }[estimated_tilt_category]
         estimated_building_height = st.sidebar.number_input(
             'Estimated Building Height', value=0)
