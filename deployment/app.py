@@ -109,39 +109,45 @@ def solar_energy_prediction():
             "<p style='font-size:  2em; color: white; font-weight: bold;'>Full adoption of solar is recommended.</p>", unsafe_allow_html=True)
 # Function for Potential Installable Area
 
-
 def potential_installable_area():
-    # Load the trained model
-    rf_model = load('randomForest.joblib')
+        # Load the trained model
+        rf_model = load('randomForest.joblib')
 
-    # Streamlit app
-    st.markdown("<h1 style='color: black;'>SUNOPTIMIZE TECHNOLOGIES</h1>",
-                unsafe_allow_html=True)
+        # Streamlit app
+        st.markdown("<h1 style='color: black;'>SUNOPTIMIZE TECHNOLOGIES</h1>",
+                    unsafe_allow_html=True)
 
-    # Sidebar for user input
-    st.sidebar.header('Input Parameters')
+        # Sidebar for user input
+        st.sidebar.header('Input Parameters')
 
-    # Define input fields for each feature
-    surface_area = st.sidebar.number_input('Surface Area', value=0)
-    estimated_tilt = st.sidebar.number_input('Estimated Tilt', value=0)
-    estimated_building_height = st.sidebar.number_input(
-        'Estimated Building Height', value=0)
+        # Define input fields for each feature
+        surface_area = st.sidebar.number_input('Surface Area', value=0)
+        estimated_tilt_category = st.sidebar.selectbox(
+        'Tilt Angle Category', options=['High', 'Moderate', 'Low',"flat"])
+        estimated_tilt = {
+        'High':  45,
+        'Moderate':  30,
+        'Low':  15,
+        "flat": 1
+        }[estimated_tilt_category]
+        estimated_building_height = st.sidebar.number_input(
+            'Estimated Building Height', value=0)
 
-    # Button to trigger prediction
-    if st.button('Predict'):
-        # Prepare input data for prediction
-        input_data = pd.DataFrame({
-            'Surface_area': [surface_area],
-            'Estimated_tilt': [estimated_tilt],
-            'Estimated_building_height': [estimated_building_height]
-        })
+        # Button to trigger prediction
+        if st.button('Predict'):
+            # Prepare input data for prediction
+            input_data = pd.DataFrame({
+                'Surface_area': [surface_area],
+                'Estimated_tilt': [estimated_tilt],
+                'Estimated_building_height': [estimated_building_height]
+            })
 
-        # Make predictions
-        prediction = rf_model.predict(input_data)
+            # Make predictions
+            prediction = rf_model.predict(input_data)
 
-        # Display prediction
-        st.markdown("<p style='font-size:  2em; color: white; font-weight: bold;'>The predicted potential installable area is :{}</p>".format(
-        prediction[0]), unsafe_allow_html=True)
+            # Display prediction
+            st.markdown("<p style='font-size:  2em; color: white; font-weight: bold;'>The predicted potential installable area is :{}</p>".format(
+                prediction[0]), unsafe_allow_html=True)
 
 # Main function to run the app
 
@@ -149,13 +155,14 @@ def potential_installable_area():
 def main():
     st.sidebar.title("Navigation")
     selection = st.sidebar.radio(
-        "Go to", ["Solar Energy Prediction", "Potential Installable Area"])
+        "Go to", ["Potential Installable Area","Solar Energy Prediction"])
 
     if selection == "Solar Energy Prediction":
         # Code for the solar energy prediction app goes here
         solar_energy_prediction()
     elif selection == "Potential Installable Area":
         potential_installable_area()
+
 
  # Run the app
 if __name__ == "__main__":
