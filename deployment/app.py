@@ -1,86 +1,38 @@
 import streamlit as st
-from joblib import load
-from keras.models import load_model
+import joblib
 import pandas as pd
-import base64
 
-# Function to convert image to Base64
+# Load the trained model
+model = joblib.load('Neural_networks.joblib')
 
+# Streamlit app
+st.title('Solar Energy Potential Prediction')
 
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+# Sidebar for user input
+st.sidebar.header('Input Parameters')
 
+# Input fields for each feature
+surface_area = st.sidebar.number_input('Surface Area', value=500)
+potential_installable_area = st.sidebar.number_input('Potential Installable Area', value=500)
+peak_installable_capacity = st.sidebar.number_input('Peak Installable Capacity', value=500)
+# Options for the categorical variable
+building_types = ['single family residential', 'multi-family residential', 'commercial', 'public', 'industrial', 'peri-urban settlement']
+assumed_building_type = st.sidebar.multiselect('Assumed Building Type', building_types)
+estimated_tilt = st.sidebar.number_input('Estimated Tilt Angle', value=45)
+estimated_building_height = st.sidebar.number_input('Estimated Building Height', value=50)
+estimated_capacity_factor = st.sidebar.number_input('Estimated Capacity Factor', value=0.85, step=0.01)
 
-image_path = 'solar energy.jpg'
-image_bytes = get_base64_of_bin_file(image_path)
+# Prepare input data for prediction
+input_data = pd.DataFrame({
+    'Surface_area': [surface_area],
+    'Potential_installable_area': [potential_installable_area],
+    'Peak_installable_capacity': [peak_installable_capacity],
+    'Assumed_building_type': [assumed_building_type],
+    'Estimated_tilt': [estimated_tilt],
+    'Estimated_building_height': [estimated_building_height],
+    'Estimated_capacity_factor': [estimated_capacity_factor]
+})
 
-bg_image = f'''
-<style>
-.stApp {{
-    background-image: url("data:image/jpeg;base64,{image_bytes}");
-    background-size: cover;
-}}
-</style>
-'''
-
-st.markdown(bg_image, unsafe_allow_html=True)
-# # Load the trained model
-model = load_model('keras_model.h5')
-
-
-def solar_energy_prediction():
-    st.markdown("<h1 style='color: black;'>SUNOPTIMIZE TECHNOLOGIES</h1>",
-                unsafe_allow_html=True)
-
-    # Sidebar for user input
-    st.sidebar.header('Input Parameters')
-
-    # Input fields for each feature
-    surface_area = st.sidebar.number_input('Surface Area', value=50)
-    potential_installable_area = st.sidebar.number_input(
-        'Potential Installable Area', value=50)
-    peak_installable_capacity = st.sidebar.number_input(
-        'Peak Installable Capacity', value=50)
-    estimated_tilt = st.sidebar.number_input('Estimated Tilt Angle', value=45)
-    estimated_building_height = st.sidebar.number_input(
-        'Estimated Building Height', value=5)
-    estimated_capacity_factor = st.sidebar.number_input(
-        'Estimated Capacity Factor', value=0.85, step=0.01)
-
-    # Encoding for Assumed Building Type
-    building_type_encoding = {
-        'single family residential':   0.667723,
-        'multi-family residential':   0.138512,
-        'commercial':   0.058657,
-        'public':   0.053359,
-        'industrial':   0.046109,
-        'peri-urban settlement':   0.035641
-    }
-
-    # Options for the categorical variable
-    building_types = list(building_type_encoding.keys())
-    assumed_building_type = st.sidebar.selectbox(
-        'Assumed Building Type', building_types)
-
-    # Encode the selected building type
-    encoded_building_type = building_type_encoding[assumed_building_type]
-
-    # Prepare input data for prediction
-    input_data = pd.DataFrame({
-        'Surface_area': [surface_area],
-        'Potential_installable_area': [potential_installable_area],
-        'Peak_installable_capacity': [peak_installable_capacity],
-        'Assumed_building_type': [encoded_building_type],
-        'Estimated_tilt': [estimated_tilt],
-        'Estimated_building_height': [estimated_building_height],
-        'Estimated_capacity_factor': [estimated_capacity_factor]
-    })
-
-    # Additional input field for the inputted value
-    inputted_value = st.sidebar.number_input(
-        'Current yearly energy consumption in units')
 
     # Make predictions
     prediction = model.predict(input_data)
@@ -144,6 +96,8 @@ def potential_installable_area():
 
             # Make predictions
             prediction = rf_model.predict(input_data)
+# Make predictions
+prediction = model.predict(input_data)
 
             # Display prediction
             st.markdown("<p style='font-size:  2em; color: white; font-weight: bold;'>The predicted potential installable area is :{}</p>".format(
@@ -167,3 +121,6 @@ def main():
  # Run the app
 if __name__ == "__main__":
     main()
+# Display prediction
+st.subheader('Prediction:')
+st.write(f'The predicted energy potential per year is: {prediction[0]}')
