@@ -92,9 +92,32 @@ To run the streamlit app locally, run the following:
 ```sh
 streamlit run deployment/app.py
 ```
+
+# Conclusion
+1. Nairobi's dissatisfaction with traditional power sources like KPLC drives a surge in solar energy adoption.
+2. An intuitive interface enables easy input of building details and real-time receipt of rooftop solar recommendations.
+3. A cost-benefit analysis aids decision-making on solar investments.
+4. Engagement with property owners, solar firms, and regulatory bodies promotes sustainable energy practices.
+5. Nairobi lacks a systematic approach to maximize rooftop solar potential, fostering innovation.
+
+# Recommendations
+1. Diversify Solar Installations: Encourage varied building types for balanced energy generation.
+2. Target Industry: Incentivize solar adoption in industrial sectors for increased energy output.
+3. Optimize Surface Use: Maximize rooftops and facades for efficient energy production.
+4. Surface Area Correlation: Understand non-linear surface area-energy potential for better planning.
+5. Prioritize Predictive Models: Invest in accurate models for informed solar project decisions.
+
 # Next Steps
-
-
+1. Stakeholder Engagement:
+Maintain active involvement.
+Foster partnerships and gather feedback.
+Evaluation and Iteration:
+2. Monitor using KPIs.
+Incorporate stakeholder feedback.
+Scaling Initiatives:
+3. Expand successful projects.
+Identify new areas.
+Secure funding and partnerships.
 
 # Acknowledgement
 * [Sammy Kimani](https://github.com/samcurryokee)        
